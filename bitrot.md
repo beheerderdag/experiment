@@ -80,7 +80,6 @@ iget -v -n 1 /SURFsaraTest01/home/perf/file.img file.rot
 $ md5sum file.rot 
 d4b1b46daa6b56a5fd128e3c7f67fddd  file.rot
 
-11:21 irods2.storage.surfsara.nl:/home/sharifi 
 $ md5sum file.img 
 75e7238f29718e3ab0f562f24b059b21  file.img
 ```

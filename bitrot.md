@@ -38,10 +38,9 @@ $ ils -L file.img
    
   To simulate file corrupton/bitroot as root user do the following. Here we are corrupting one of the replicas 
   by writing 128k of bad data 
-  
-    ```
+  ```
     dd seek=5k if=/dev/zero of=/Cache/Vault/DemoResc1/home/testuser/file.img bs=1k count=128 conv=notrunc
-    ```
+  ```
     
   After this write the checksum of the file in the physical location changed: 
   

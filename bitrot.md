@@ -63,13 +63,19 @@ d4b1b46daa6b56a5fd128e3c7f67fddd  file.img
    
    ```
    $ iget -K file.img file.rot
-ERROR: rcDataObjGet: chksum mismatch error for file.rot, status = -314000 status = -314000 USER_CHKSUM_MISMATCH
-ERROR: getUtil: get error for file.rot status = -314000 USER_CHKSUM_MISMATCH
-```
+   ```
+   Thus gets us the file from demoResc which is not corrupted, the download is successful. However, if we try to get the file from *DemoResc1* we receive this:
+   
+   ```
+  iget -K file.img file.rot -R DemoResc1 -f
+  remote addresses: 127.0.0.1 ERROR: rcDataObjGet: checksum mismatch error for file.rot, status = -314000 status = -314000 USER_CHKSUM_MISMATCH
+  remote addresses: 127.0.0.1 ERROR: getUtil: get error for file.rot status = -314000 USER_CHKSUM_MISMATCH
+   ```
+
 
 Without the verification it will download the data. Let's pick the corrupt one 
 ```
-iget -v -n 1 /SURFsaraTest01/home/perf/file.img file.rot
+iget -v -R DemoResc1 /SURFsaraTest01/home/perf/file.img file.rot
    file.img                       10.000 MB | 0.078 sec | 0 thr | 128.936 MB/s
  ```
  
@@ -82,3 +88,13 @@ d4b1b46daa6b56a5fd128e3c7f67fddd  file.rot
 $ md5sum file.img 
 75e7238f29718e3ab0f562f24b059b21  file.img
 ```
+
+## Other commands to retrieve and write data
+- *irsync* shows the same behaviour as *iget*. If used with the -K flag rotten data will not be synchronised
+- *irepl*: This command poses a problem. We can define our rotten resource as source resource and replicate to all other resources or, even worse, use this one to update all other replicas. The command does not come with a *-K* option to first force checksunm verfication.
+ ```sh
+ irepl -S iarchive-centosResource -R robin file.img
+ ```
+## Conclusions
+- Whenever possible users should either use the on-the-fly checksum verification when synchronising or downloading data. If that is not possible a more elaborate workflow which hecks the checksum on the destination with the checksum stored in the iCAT needs to be implemeneted.
+- The iRODS system itself does not notice when data in the backend is changed. Hence, data intregrity checks on a regular basis between the metadata stored in the iCAT and the backend storage system are needed.

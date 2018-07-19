@@ -11,7 +11,7 @@ If the installation does not come with dev tools install,
 NOTE: Get rid of system clang, cmake, and boost if they exist. The irods external package will provide this. 
 
 ## Install packages 
-````
+```
 # yum install git 
 
 # yum install irods-server irods-devel irods-externals*
@@ -19,7 +19,7 @@ NOTE: Get rid of system clang, cmake, and boost if they exist. The irods externa
 # yum install ninja-build 
 # yum install openss-devel 
 # yum install unixODBC unixODBC-devel
-````
+```
 This also requires some postgres package 
 ```
 # yum install postgresql postgresql-devel postgresql-odbc.
@@ -94,6 +94,78 @@ mkdir build
 cd build 
 cmake .. -GNinja
 ninja-build package
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/irods-externals/clang-runtime3.8-0/lib/
+
+
 ```
 
 If no error you should see the rpm package. 
+
+
+## Rpm install 
+
+```
+[root@145 build]# rpm -ivh irods-database-plugin-cockroachdb-4.2.3-1.x86_64.rpm 
+Preparing...                          ################################# [100%]
+Updating / installing...
+   1:irods-database-plugin-cockroachdb################################# [100%]
+
+=======================================================================
+
+iRODS Postgres Database Plugin installation was successful.
+
+To configure this plugin, the following prerequisites need to be met:
+ - an existing database user (to be used by the iRODS server)
+ - an existing database (to be used as the iCAT catalog)
+ - permissions for existing user on existing database
+
+Then run the following setup script:
+  sudo python /var/lib/irods/scripts/setup_irods.py
+
+=======================================================================
+```
+
+NOTE: yes, it says postgres but it is for cockroachdb. 
+
+
+At this point we have the necessary irods component installed including the two plugins we just built 
+
+```
+[root@145 ~]# rpm -qa|grep irods|grep plugin
+irods-api-plugin-bulkreg-common-4.2.3-1.x86_64
+irods-database-plugin-cockroachdb-4.2.3-1.x86_64
+```
+
+Now, we need to install cockroachdb. 
+
+## Cockroachdb install 
+
+```
+wget -qO- https://binaries.cockroachdb.com/cockroach-v2.0.4.linux-amd64.tgz | tar  xvz
+cp -i cockroach-v2.0.4.linux-amd64/cockroach /usr/local/bin
+```
+
+Secure mode start 
+
+```
+ mkdir certs
+ mkdir my-safe-directory
+ cockroach cert create-ca --certs-dir=certs --ca-key=my-safe-directory/ca.key
+ cockroach cert create-client root --certs-dir=certs --ca-key=my-safe-directory/ca.key
+ cockroach cert create-node localhost $(hostname) --certs-dir=certs --ca-key=my-safe-directory/ca.key
+ cockroach start --certs-dir=certs --host=localhost --http-host=localhost
+```
+
+SQL command line 
+```
+ cockroach sql --certs-dir=certs
+ create database icat; 
+  create user irods with password '<pass>>'
+  grant all on database icat to irods;
+ ```
+ 
+ 
+ ## Run irods setup 
+ ...
+ 
+ 

@@ -19,7 +19,7 @@ wget -qO - https://packages.irods.org/renci-irods.yum.repo | tee /etc/yum.repos.
 
 # yum install irods-server irods-devel irods-externals*
 
-# yum install ninja-build 
+# yum install ninja-build python-devel
 # yum install openss-devel 
 # yum install unixODBC unixODBC-devel
 ```

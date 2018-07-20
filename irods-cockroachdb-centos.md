@@ -13,6 +13,9 @@ NOTE: Get rid of system clang, cmake, and boost if they exist. The irods externa
 ## Install packages 
 ```
 # yum install git 
+# Install the public key and add the repository:
+rpm --import https://packages.irods.org/irods-signing-key.asc
+wget -qO - https://packages.irods.org/renci-irods.yum.repo | tee /etc/yum.repos.d/renci-irods.yum.repo
 
 # yum install irods-server irods-devel irods-externals*
 

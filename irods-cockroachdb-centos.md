@@ -256,3 +256,24 @@ If the installation is done right the setup script will recognize the cockroachd
 
 then run iinit to use the irods client (server is localhost). 
 
+# Quick perf test 
+
+With 100k small files
+```
+mkdir 100k 
+cd 100k 
+dd if=/dev/zero of=masterfile bs=1 count=1000000
+split -b 10 -a 11 masterfile
+```
+then iput with bulk (capture time) 
+
+```
+[root@145 data]# /usr/bin/time iput -rb -v 100k/
+C- /tempZone/home/rods/100k:
+C- /tempZone/home/rods/100k:
+Bulk upload 50 files.
+   xaaaaaaaaabx                    0.000 MB | 3.002 sec | 0 thr |  0.000 MB/s
+Bulk upload 50 files.
+   xaaaaaaaaadv                    0.000 MB | 2.627 sec | 0 thr |  0.000 MB/
+   ````
+   

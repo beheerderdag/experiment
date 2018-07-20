@@ -145,7 +145,34 @@ wget -qO- https://binaries.cockroachdb.com/cockroach-v2.0.4.linux-amd64.tgz | ta
 cp -i cockroach-v2.0.4.linux-amd64/cockroach /usr/local/bin
 ```
 
-Secure mode start 
+
+## Insecure mode start 
+
+At the moment we can test with insecure mode (iRODS consortium is working on fixing the code so we can us secure mode in 
+cockroachdb: https://github.com/irods/irods_database_plugin_cockroachdb/issues/7) 
+
+```
+cockroach start --insecure --host=localhost --background 
+```
+
+check the installation 
+This should give you a sql prompt. 
+```
+cockroach sql --insecure 
+``` 
+
+then create the icat database, irods user, grant permission. 
+
+```
+  create database icat; 
+  create user irods ; 
+  grant all on database icat to irods;
+  ```
+  
+
+## Secure mode start 
+(for later) 
+
 
 ```
  mkdir certs
@@ -164,8 +191,19 @@ SQL command line
   grant all on database icat to irods;
  ```
  
- 
+ Now we are ready to run the irods setup script. 
  ## Run irods setup 
- ...
  
+ This is your regular iRODS setup with cockroachdb information. Two caveats. a) For the ODBC driver select default PostgreSQL and b) when asked for db username and password just provide a bogus password. This is because of aforementioned issue with secure mode. 
  
+ ```
+ +-----------------------------------------+
+| Configuring the database communications |
++-----------------------------------------+
+
+You are configuring an iRODS database plugin. The iRODS server cannot be started until its database has been properly configured.
+
+ODBC driver for cockroachdb [PostgreSQL]: 
+
+```
+

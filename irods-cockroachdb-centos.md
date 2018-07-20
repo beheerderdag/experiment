@@ -235,6 +235,24 @@ SQL command line
 You are configuring an iRODS database plugin. The iRODS server cannot be started until its database has been properly configured.
 
 ODBC driver for cockroachdb [PostgreSQL]: 
+Database server's hostname or IP address [localhost]: 
+Database server's port [26257]: 
+Database name [ICAT]: icat
+Database username [irods]: 
+
+-------------------------------------------
+Database Type: cockroachdb
+ODBC Driver:   PostgreSQL
+Database Host: localhost
+Database Port: 26257
+Database Name: icat
+Database User: irods
+-------------------------------------------
 
 ```
+
+If the installation is done right the setup script will recognize the cockroachdb setup and fill in the port information. And rest of inputs are here: https://github.com/irods/irods_database_plugin_cockroachdb/blob/master/packaging/localhost_setup_cockroachdb.input
+
+
+then run iinit to use the irods client (server is localhost). 
 

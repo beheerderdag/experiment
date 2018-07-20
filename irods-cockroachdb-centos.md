@@ -155,10 +155,38 @@ At the moment we can test with insecure mode (iRODS consortium is working on fix
 cockroachdb: https://github.com/irods/irods_database_plugin_cockroachdb/issues/7) 
 
 ```
-cockroach start --insecure --host=localhost --background 
+
+# cockroach start --insecure --background 
+*
+* WARNING: RUNNING IN INSECURE MODE!
+* 
+* - Your cluster is open for any client that can access <all your IP addresses>.
+* - Any user, even root, can log in without providing a password.
+* - Any user, connecting as root, can read or write any data in your cluster.
+* - There is no network encryption nor authentication, and thus no confidentiality.
+* 
+* Check out how to secure your cluster: https://www.cockroachlabs.com/docs/v2.0/secure-a-cluster.html
+*
+ 
+# CockroachDB node starting at 2018-07-20 12:31:56.247401226 +0000 UTC (took 2.0s)
+build:               CCL v2.0.4 @ 2018/07/16 20:25:32 (go1.10)
+admin:               http://xxxxx.nl:8080
+sql:                 postgresql://root@1xxxxx.surf-hosted.nl:26257?sslmode=disable
+logs:                /data/cockroach-data/logs
+temp dir:            /data/cockroach-data/cockroach-temp721572895
+external I/O path:   /data/cockroach-data/extern
+store[0]:            path=/data/cockroach-data
+status:              initialized new cluster
+clusterID:           d4d0acc1-d88c-4bdd-bfba-9b63c02897d7
+nodeID:              1
 ```
 
-check the installation 
+check the node stat 
+
+```
+cockroach node status --insecure
+```
+
 This should give you a sql prompt. 
 ```
 cockroach sql --insecure 

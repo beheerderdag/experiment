@@ -12,7 +12,7 @@ NOTE: Get rid of system clang, cmake, and boost if they exist (```yum remove boo
 
 ## Install packages 
 ```
-# yum install git ninja-build python-devel openss-devel unixODBC unixODBC-devel
+# yum install git ninja-build python-devel openssl-devel unixODBC unixODBC-devel
 
 # Install the public key and add the repository:
 rpm --import https://packages.irods.org/irods-signing-key.asc

@@ -8,24 +8,22 @@ I am using a clean centos7 VM. This is with iRODS 4.2.3.
 If the installation does not come with dev tools install, 
 ``` yum groupinstall development tools``` 
 
-NOTE: Get rid of system clang, cmake, and boost if they exist. The irods external package will provide this. 
+NOTE: Get rid of system clang, cmake, and boost if they exist (```yum remove boost*```). The irods external package will provide this. 
 
 ## Install packages 
 ```
-# yum install git 
+# yum install git ninja-build python-devel openss-devel unixODBC unixODBC-devel
+
 # Install the public key and add the repository:
 rpm --import https://packages.irods.org/irods-signing-key.asc
 wget -qO - https://packages.irods.org/renci-irods.yum.repo | tee /etc/yum.repos.d/renci-irods.yum.repo
 
 # yum install irods-server irods-devel irods-externals*
 
-# yum install ninja-build python-devel
-# yum install openss-devel 
-# yum install unixODBC unixODBC-devel
 ```
 This also requires some postgres package 
 ```
-# yum install postgresql postgresql-devel postgresql-odbc.
+# yum install postgresql postgresql-devel postgresql-odbc
 ```
 
 ## Build process 

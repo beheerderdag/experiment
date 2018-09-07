@@ -1,10 +1,12 @@
+### Data Management platform features and evaluation criterion
+
 
 The goal of this table is to evaluate various tools that can be part of our data management platform solution. NOTE: the 
 comparison is baesd on various functions and features that we encountered in research data management ecosystem. This is not 
 a product review or feature comparison. We are trying to highligh the various components and strengths of each tool. Each 
 use case and research data management need are unique and requires various customizations. 
 
-We also have the following data Management platform features in mind: 
+We also have the following data management platform (DMP) features in mind: 
 
 * One entry point to many storage services and data services
 * Usable interface to compute services, policies defining and tracking data transitions

@@ -1,12 +1,7 @@
 ### Data Management platform features and evaluation criterion
 
 
-The goal of this table is to evaluate various tools that can be part of our data management platform solution. NOTE: the 
-comparison is baesd on various functions and features that we encountered in research data management ecosystem. This is not 
-a product review or feature comparison. We are trying to highligh the various components and strengths of each tool. Each 
-use case and research data management need are unique and requires various customizations. 
-
-We also have the following data management platform (DMP) features in mind: 
+The goal of this dociument is to evaluate various tools and software that can play a role in data management platform solution. In order to start this discussion first we focused on the following data management platform (DMP) features: 
 
 * One entry point to many storage services and data services
 * Usable interface to compute services, policies defining and tracking data transitions
@@ -16,10 +11,7 @@ We also have the following data management platform (DMP) features in mind:
 * Well defined transition between data storage locations and data application environments such as compute environments
 * Well defined transition between active data and archived or published data
 
-Software/tools that we are currently evaluating/researching. We do not have first hand experience with all of these so 
-the notes here are limited. 
-
-We also identified the following aspects for evaluation and implementation as each solution sometime focuses on specific problems. So a comprehensive data management platform will include a variety of solutions and customizations. 
+Our goal is to think about both general and specific use cases and then try to highligh the components and strengths of each tool. Each use case and research data management need are unique and requires various customizations. Thus we also identified the following aspects for evaluation and implementation as each solution sometime focuses on specific problems. So a comprehensive data management platform will include a variety of solutions and customizations. 
 
 * Managing databases, disparate data sets and storage resources 
 * Metadata management 
@@ -27,6 +19,7 @@ We also identified the following aspects for evaluation and implementation as ea
 * Sharing/Publication
 * Extensions/external tools 
 
+Software/tools: 
 
 1. [iRODS](https://irods.org/) 
 Used for data virtualization, federation, discovery (from variety of storage resources), workflow automation via policy engine. 
@@ -43,7 +36,7 @@ Focused on big data and data science applications (provides data management and 
 8. [StrongLink](https://www.strongboxdata.com/stronglink) 
 9. [Clowder](https://clowder.ncsa.illinois.edu/) 
 
-
+NOTE: the comparison is baesd on various functions and features that we encountered in research data management ecosystem. This is not a product review or feature comparison. 
 
 
 

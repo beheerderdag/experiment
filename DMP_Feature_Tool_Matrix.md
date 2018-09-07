@@ -32,6 +32,7 @@ Focused on big data and data science applications (provides data management and 
 6. [Metadata Management for Applied Sciences (MASi)](https://www.sciencedirect.com/science/article/pii/S0167739X17305344) 
 7. [Starfish](http://www.starfishstorage.com/) 
 8. [StrongLink](https://www.strongboxdata.com/stronglink) 
+9. [Clowder](https://clowder.ncsa.illinois.edu/) 
 
 
 

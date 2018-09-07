@@ -4,7 +4,7 @@ comparison is baesd on various functions and features that we encountered in res
 a product review or feature comparison. We are trying to highligh the various components and strengths of each tool. Each 
 use case and research data management need are unique and requires various customizations. 
 
-We also have the following data Management platform features in mind/ 
+We also have the following data Management platform features in mind: 
 
 * One entry point to many storage services and data services
 * Usable interface to compute services, policies defining and tracking data transitions
@@ -14,9 +14,29 @@ We also have the following data Management platform features in mind/
 * Well defined transition between data storage locations and data application environments such as compute environments
 * Well defined transition between active data and archived or published data
 
+Software/tools that we are currently evaluating/researching. We do not have first hand experience with all of these so 
+the notes and evaluation here are limited and based on our experience. 
+
+1. [iRODS](https://irods.org/) 
+Used for data virtualization, federation, discovery (from variety of storage resources), workflow automation via policy engine. 
+2. [Denodo](https://www.denodo.com/en) 
+Creates data virtualization layer by connecting various  structured data sources. Provides  unified access for consuming applications.
+3. [CKAN](https://ckan.org/) 
+Data portal, repository
+4. [Figshare](https://figshare.com/) 
+Digital repository 
+5. [Immuta](https://www.immuta.com/) 
+Focused on big data and data science applications (provides data management and portal solution) 
+6. [Metadata Management for Applied Sciences (MASi)](https://www.sciencedirect.com/science/article/pii/S0167739X17305344) 
+7. [Starfish](http://www.starfishstorage.com/) 
+8. [StrongLink](https://www.strongboxdata.com/stronglink) 
 
 
-|                                | iRODS                                                                                                                                                         | Denodo                                                                                                                                  | CKAN                        | Figshare                  | Immuta                                                                                                                                                        | MASI                                | Starfish                                            | StrongLink                                                              |
+
+
+
+
+|                                | iRODS                                                                                                                                                         | Denodo                                                                                                                                  | CKAN                        | Figshare                  | Immuta                                                                                                                                                        | MASi                                | Starfish                                            | StrongLink                                                              |
 |--------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|-----------------------------|---------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------|-----------------------------------------------------|-------------------------------------------------------------------------|
 | Description/Common usage       | Used for data virtualization, federation, discovery (from variety of storage resources),  workflow automation via policy engine.                              | Creates data virtualization layer by connecting various  structured data sources. Provides  unified access for consuming applications.  | Data portal  and repository | Digital Repository        | Similar to Denodo. Creates a virtual  layer for various data source and datasets.  Provides API to applications.  This also has a policy  enforcement point.  | Repository and  Metadata Management | Most similar  to iRODS.  provides a  middle layer.  | Combines  data virtualization,  metadata management,  with a AI layer.  |
 | Open Source                    | Yes                                                                                                                                                           | No but  a free community version is available                                                                                           | Yes                         | No. Also  service based.  |                                                                                                                                                               |                                     | No                                                  | No                                                                      |

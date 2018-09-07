@@ -11,7 +11,7 @@ The goal of this dociument is to evaluate various tools and software that can pl
 * Well defined transition between data storage locations and data application environments such as compute environments
 * Well defined transition between active data and archived or published data
 
-Our goal is to think about both general and specific use cases and then try to highligh the components and strengths of each tool. Each use case and research data management need are unique and requires various customizations. Thus we also identified the following aspects for evaluation and implementation as each solution sometime focuses on specific problems. So a comprehensive data management platform will include a variety of solutions and customizations. 
+Our goal is to think about both general and specific use cases and then try to highlight the components and strengths of each tool. Each use case and research data management need are unique and requires various customizations. Thus we also identified the following aspects for evaluation and implementation as each solution sometime focuses on specific problems. So a comprehensive data management platform will include a variety of solutions and customizations. 
 
 * Managing databases, disparate data sets and storage resources 
 * Metadata management 

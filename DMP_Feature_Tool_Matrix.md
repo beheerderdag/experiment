@@ -17,7 +17,16 @@ We also have the following data management platform (DMP) features in mind:
 * Well defined transition between active data and archived or published data
 
 Software/tools that we are currently evaluating/researching. We do not have first hand experience with all of these so 
-the notes and evaluation here are limited and based on our experience. 
+the notes here are limited. 
+
+We also identified the following aspects for evaluation and implementation as each solution sometime focuses on specific problems. So a comprehensive data management platform will include a variety of solutions and customizations. 
+
+* Managing databases, disparate data sets and storage resources 
+* Metadata management 
+* Repositories (including long term archive) 
+* Sharing/Publication
+* Extensions/external tools 
+
 
 1. [iRODS](https://irods.org/) 
 Used for data virtualization, federation, discovery (from variety of storage resources), workflow automation via policy engine. 

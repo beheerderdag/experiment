@@ -32,7 +32,7 @@ We check the file --- the checksum matches.
 $ ils -L file.img
   testuser              0 demoResc     10485760 2018-03-16.11:04 & file.img
     75e7238f29718e3ab0f562f24b059b21    generic    /var/irods/Vault/home/testuser/file.img
-  testuser              1 DeomResc1    10485760 2018-03-16.11:05 & file.img
+  testuser              1 DemoResc1    10485760 2018-03-16.11:05 & file.img
     75e7238f29718e3ab0f562f24b059b21    generic    /Cache/Vault/DemoResc1/home/testuser/file.img 
 ```
    
@@ -55,7 +55,7 @@ d4b1b46daa6b56a5fd128e3c7f67fddd  file.img
   $ ils -L file.img
   perf              0 demoResc     10485760 2018-03-16.11:04 & file.img
     75e7238f29718e3ab0f562f24b059b21    generic    /var/irods/Vault/home/perf/file.img
-  perf              1 PerfResc     10485760 2018-03-16.11:05 & file.img
+  perf              1 DemoResc1     10485760 2018-03-16.11:05 & file.img
     75e7238f29718e3ab0f562f24b059b21    generic    /eudatCache/Vault/PerfResc/home/perf/file.img
    ```
    

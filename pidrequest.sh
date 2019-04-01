@@ -3,7 +3,7 @@ CURRENTDIR=`pwd`
      CERTIFICATE="$CURRENTDIR/certificate_only.pem"
      ctype="Content-Type:application/json"
 
-     handledata="<linkL"
+     handledata="<linkL>"
 
      curldata="{\"values\":[{\"index\":100,\"type\":\"HS_ADMIN\",
  \"data\":{\"value\":{\"index\":200,\"handle\":\"0.NA\/20.500.11953\",
